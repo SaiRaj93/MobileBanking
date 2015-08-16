@@ -1,0 +1,225 @@
+<!DOCTYPE HTML>
+<html>
+    	<head>
+    		<meta charset="UTF-8">
+    		<title>index</title>
+<meta name="viewport"
+	content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<link rel="shortcut icon" href="images/favicon.png">
+    		<link rel="apple-touch-icon" href="images/apple-touch-icon.png">
+    		<link rel="stylesheet" href="css/main.css">
+    		<script>window.$ = window.jQuery = WLJQ;</script>
+    		<script type="text/javascript" src="dojox/mobile/deviceTheme.js"></script>
+    		<script type="text/javascript" data-dojo-config="isDebug: false, async: true, parseOnLoad: true, mblHideAddressBar: false" src="dojo/dojo.js"></script>
+    	</head>
+    	<body style="display: none;">
+    		<div data-dojo-type="dojox.mobile.ScrollableView" id="view0" data-dojo-props="selected:true">
+    			<!--application UI goes here-->
+    			Hello Worklight
+    			<img  src="images/MOBILEBANKING.jpg" width="360" height="150" align="middle">
+    			<div data-dojo-type="dojox.mobile.Heading"
+			data-dojo-props= "label:'mobile banking'"></div>
+		<ul data-dojo-type="dojox.mobile.TabBar" >
+			<li data-dojo-type="dojox.mobile.TabBarButton"  href="index.html">HOME</li>
+			<li data-dojo-type="dojox.mobile.TabBarButton"  href="About.html">AboutUs</li>
+			<li data-dojo-type="dojox.mobile.TabBarButton"  href="terms.html">TERMS</li>
+			<li data-dojo-type="dojox.mobile.TabBarButton"  href="Contact.html">CONTACT</li>
+			
+		</ul>
+
+		<ul data-dojo-type="dojox.mobile.RoundRect">
+		
+<li data-dojo-type="dojox.mobile.ListItem" data-dojo-props="moveTo: 'Singup',transition:'flip'">singup</li>
+<li data-dojo-type="dojox.mobile.ListItem" data-dojo-props="moveTo: 'Login',transition:'flip'">Login</li>
+<li data-dojo-type="dojox.mobile.ListItem" data-dojo-props="moveTo: 'Map' ,transition:'flip'">ATM LOCATIONS</li>
+		
+	  </ul>
+	  
+	  </div>
+	  
+	  
+	
+	
+	  
+<!-- sing up -->	  
+
+<div data-dojo-type="dojox.mobile.ScrollableView" id="Singup">
+<div data-dojo-type="dojox.mobile.Heading"
+			data-dojo-props= "label:'Registeration', back: 'back ', moveTo: 'view0' "></div>
+Account Number*
+<input type="text"  id="Acc_No" placeholder="Enter your 16 digit Account number" size=30><br>
+Account Holder's Full Name*
+<input type="text" id="Acc_Fullname" size=30>
+<br/>
+Date of Birth*
+<input type="date" id="Date_Of_Birth" >
+<br/>
+<br/>
+Mobile Number*
+<input type="number" id="Mobile_Number" size=10>
+<br/>
+<br/>
+Email Address*
+<input type="email" id="Email" size=30>
+<br/>
+<br/>
+<br/>
+Password*
+<input type="password"  id="password" size=30 >
+
+<br/>
+<br/>
+
+Account Branch 
+<select id="Acc_Branch">
+<option selected>London</option>
+<option >India</option>
+<option >U.S.A</option>
+</select> 
+<br/>
+<br/>
+Id proof Details
+<br/>
+<br/>
+Id Type
+<input type="text" id="Id_type" size=30>
+<br/>
+<br/>
+Id number
+ <input type="text" id="Id_Number"> <br/>
+<br/>
+
+<br/>
+<br/>
+
+DATE OF REGISTRATION*
+<input type="date" id ="Date_Of_Register" placeholder="todays date">
+<BR><BR>
+status
+<input type="text" placeholder="rejected">
+<br><BR>
+
+ <input type="reset" value ="reset"  style= "background-color:#DDDDDD; border:0.2em solid black; color:black; position:absolute;">
+ <input type="button" value="register" style="background-color:#DDDDDD; border:0.2em solid black; color:black; position:absolute; left:270px; cursor:pointer;" onclick="registerData()">
+
+  </div>
+ 
+ 
+
+
+
+
+
+
+
+
+
+
+  <!-- LOGIN -->
+  <div data-dojo-type="dojox.mobile.ScrollableView" id="Login">
+  <div data-dojo-type="dojox.mobile.Heading"
+			data-dojo-props= "label:'Login', back: 'back ', moveTo: 'view0' "></div>
+  <ul data-dojo-type="dojox.mobile.RoundRect">
+  
+		
+<li data-dojo-type="dojox.mobile.ListItem" data-dojo-props="moveTo: 'Customer',transition:'flip'">Customer</li>
+<li data-dojo-type="dojox.mobile.ListItem" data-dojo-props="moveTo: 'Admin',transition:'flip'">Admin</li>	
+	  </ul>
+	  </div>
+ <!-- customer -->
+ 
+ 
+  <div  data-dojo-type="dojox.mobile.ScrollableView" id="Customer">
+ <div data-dojo-type="dojox.mobile.Heading"
+			data-dojo-props= "label:'Customer Login', back: 'back ', moveTo: 'Login' "></div>
+			<p id="suc"></p>
+  <h1 style="color:blue;">customer login</h1>
+        Account no
+		<input id="Acc_No">
+		User-id
+		<input type="text" id="x" > 
+		<br>
+		password
+		<input type="password" id="password" >
+		<br>
+		<input type="submit" value="login" onclick="Login()" >
+ </div>
+ 
+ <!-- admin -->
+  <div  data-dojo-type="dojox.mobile.ScrollableView" id="Admin">
+ <div data-dojo-type="dojox.mobile.Heading"
+			data-dojo-props= "label:'Admin Login', back: 'back ', moveTo: 'Login' "></div>
+			
+  <h1 style="color:blue; ">Admin Login</h1>
+        
+		User-id
+		<input type="text" id="x" > 
+		<br>
+		password
+		<input type="password" id="password" >
+		<br>
+		<input type="submit" value="login" onclick="AdminLogin()" >
+ </div>
+ 
+ 
+ 
+ 
+ <!-- end of login -->
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ <!-- location -->
+ 
+ <div data-dojo-type="dojox.mobile.ScrollableView" id="Map">
+ <div data-dojo-type="dojox.mobile.Heading"
+			data-dojo-props= "label:'Atm Locations', back: 'back ', moveTo: 'view0' "></div>
+ <script
+src="http://maps.googleapis.com/maps/api/js?key=AIzaSyDY0kkJiTPVd2U7aTOAwhc9ySH6oHxOIYM&sensor=false">
+</script>
+
+<script>
+var myCenter=new google.maps.LatLng(51.508742,-0.120850);
+
+function initialize()
+{
+var mapProp = {
+  center:myCenter,
+  zoom:5,
+  mapTypeId:google.maps.MapTypeId.ROADMAP
+  };
+
+var map=new google.maps.Map(document.getElementById("googleMap"),mapProp);
+
+var marker=new google.maps.Marker({
+  position:myCenter,
+  });
+
+marker.setMap(map);
+
+var infowindow = new google.maps.InfoWindow({
+  content:"<b style=color:green;>XYZ bank </b><br> London<br><b color:green;>contact:454545454<b>"
+  });
+
+google.maps.event.addListener(marker, 'click', function() {
+  infowindow.open(map,marker);
+  });
+}
+
+google.maps.event.addDomListener(window, 'load', initialize);
+</script>
+
+
+
+<div id="googleMap" style="width:500px;height:380px;"></div>
+
+   </div> 		
+    		<script src="js/initOptions.js"></script>
+    		<script src="js/main.js"></script>
+    		<script src="js/messages.js"></script>
+    	</body>
+</html>

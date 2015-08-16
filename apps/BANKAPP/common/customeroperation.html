@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport"
+	content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<link rel="shortcut icon" href="images/favicon.png">
+    		<link rel="apple-touch-icon" href="images/apple-touch-icon.png">
+    		<link rel="stylesheet" href="css/main.css">
+    		<script>window.$ = window.jQuery = WLJQ;</script>
+    		<script type="text/javascript" src="dojox/mobile/deviceTheme.js"></script>
+    		<script type="text/javascript" data-dojo-config="isDebug: false, async: true, parseOnLoad: true, mblHideAddressBar: false" src="dojo/dojo.js"></script>
+    	</head>
+    	<body style="display: none;">
+    		<div data-dojo-type="dojox.mobile.ScrollableView" id="view0" data-dojo-props="selected:true">
+    			<!--application UI goes here-->
+    			Hello Worklight
+    			<img  src="images/MOBILEBANKING.jpg" width="360" height="150" align="middle">
+    			<div data-dojo-type="dojox.mobile.Heading"
+			data-dojo-props= "label:'mobile banking'"></div>
+		<ul data-dojo-type="dojox.mobile.TabBar" >
+			<li data-dojo-type="dojox.mobile.TabBarButton"  href="index.html">HOME</li>
+			<li data-dojo-type="dojox.mobile.TabBarButton"  href="About.html">AboutUs</li>
+			<li data-dojo-type="dojox.mobile.TabBarButton"  href="Terms.html">TERMS</li>
+			<li data-dojo-type="dojox.mobile.TabBarButton"  href="Contact.html">CONTACT</li>
+			
+		</ul>
+
+		
+
+		
+<ul data-dojo-type="dojox.mobile.RoundRect">
+ <li data-dojo-type="dojox.mobile.ListItem" data-dojo-props="moveTo:'Profile',transition:'flip'">view profile</li>
+		<li data-dojo-type="dojox.mobile.ListItem" data-dojo-props="moveTo: 'Check',transition:'flip'">checkaccount balance</li>
+	    <li data-dojo-type="dojox.mobile.ListItem" data-dojo-props="moveTo:'Transfer' ,transition:'flip'">Transfer funds</li>
+		<li data-dojo-type="dojox.mobile.ListItem" data-dojo-props="moveTo:  'Statement' ,transition:'flip'">Mini statement</li>
+	     <li data-dojo-type="dojox.mobile.ListItem" data-dojo-props="moveTo: 'Map' ,transition:'flip'">ATM LOCATIONS</li>
+	    <li data-dojo-type="dojox.mobile.ListItem" data-dojo-props="moveTo: 'setting' ,transition:'flip'">Settings</li>
+	     
+	      </ul>
+	  
+	  </div>
+	  
+	  
+	  
+	  
+	  
+	  <!-- view profile -->
+	  <div data-dojo-type="dojox.mobile.ScrollableView" id="Profile">
+ <div data-dojo-type="dojox.mobile.Heading"
+			data-dojo-props= "label:'Checkaccount Balance', back: 'back ', moveTo: 'view0' "></div>
+			<a href="./index.html" target="_blank" STYLE="position: fixed; left: 150px"><button>logout...</button></a>
+	  ACC_No:<input type="text"  id="Acc_no" size=16>
+<br><input type="submit" value ="Get profile info" onclick="getProfile();">
+ <div id="my"></div>
+ </div>
+ 
+ 
+	  
+	  <!-- check account -->
+	  <div data-dojo-type="dojox.mobile.ScrollableView" id="Check">
+ <div data-dojo-type="dojox.mobile.Heading"
+			data-dojo-props= "label:'Checkaccount Balance', back: 'back ', moveTo: 'view0' "></div>
+	  ACC_No:<input type="text"  id="Acc_no" size=16>
+<br><input type="submit" value ="Get Balance" onclick="getAcc();">
+<div id="my"></div>
+ </div>
+ 
+ 
+ 
+ 
+ 
+	 <!-- fund Transfer --> 
+	 
+	 <div data-dojo-type="dojox.mobile.ScrollableView" id="Transfer">
+ <div data-dojo-type="dojox.mobile.Heading"
+			data-dojo-props= "label:'Transfer funds', back: 'back ', moveTo: 'view0' "></div>
+			<a href="./index.html" target="_blank" STYLE="position: fixed; left: 150px"><button>logout...</button></a>
+	 
+	 <form enctype="application/x-www-form-urlencoded" autocomplete="on"  onsubmit="Transaction();" oninvalid="index.html">
+			transaction id <input type="text"><br><br>
+			From Account <input type="text" id="id1" size="16"/>
+			<br/><br>
+			To Account<input type="text" id="id2" size=16/><br/>
+			<br/>
+			amount<input type="number" id="amount" size=6/><br><br>
+		
+			 <input type="reset" value ="reset" fixed="bottom" style= "background-color:#DDDDDD; border:0.2em solid black; color:black; position:absolute;">
+			 <input type="submit" value="submit" style="background-color:#DDDDDD; border:0.2em solid black; color:black; position:absolute; left:270px; cursor:pointer;">
+		</form>
+	 <div id="my"></div>
+	<div id="done"></div>
+	 </div>
+	 
+	 
+	 
+	 
+	 
+	 
+	 
+	<!-- mini statement -->
+	
+	 <div data-dojo-type="dojox.mobile.ScrollableView" id="Statement">
+ <div data-dojo-type="dojox.mobile.Heading"
+			data-dojo-props= "label:'Get mini Statement', back: 'back ', moveTo: 'view0' "></div>
+			<a href="./index.html" target="_blank" STYLE="position: fixed; left: 150px"><button>logout...</button></a>
+		ACC_No:<input type="text"  id="Acc_no" size=16>
+<br><input type="submit" value ="Get Balance" onclick="getAccStatement();">
+		
+		<div id="my"></div>
+			</div>
+	 
+	 
+	 
+	 
+	 
+	 
+	 
+	 
+	 
+	 
+	  
+	  <!-- map -->
+	  <div data-dojo-type="dojox.mobile.ScrollableView" id="Map">
+ <div data-dojo-type="dojox.mobile.Heading"
+			data-dojo-props= "label:'Atm Locations', back: 'back ', moveTo: 'view0' "></div>
+			
+ <script
+src="http://maps.googleapis.com/maps/api/js?key=AIzaSyDY0kkJiTPVd2U7aTOAwhc9ySH6oHxOIYM&sensor=false">
+</script>
+
+<script>
+var myCenter=new google.maps.LatLng(51.508742,-0.120850);
+
+function initialize()
+{
+var mapProp = {
+  center:myCenter,
+  zoom:5,
+  mapTypeId:google.maps.MapTypeId.ROADMAP
+  };
+
+var map=new google.maps.Map(document.getElementById("googleMap"),mapProp);
+
+var marker=new google.maps.Marker({
+  position:myCenter,
+  });
+
+marker.setMap(map);
+
+var infowindow = new google.maps.InfoWindow({
+  content:"<b style=color:green;>XYZ bank </b><br> London<br><b color:green;>contact:454545454<b>"
+  });
+
+google.maps.event.addListener(marker, 'click', function() {
+  infowindow.open(map,marker);
+  });
+}
+
+google.maps.event.addDomListener(window, 'load', initialize);
+</script>
+<a href="./index.html" target="_blank" STYLE="position: fixed; left: 150px"><button>logout...</button></a>
+ATM LOCATION OF XYZ BANK
+
+<div id="googleMap" style="width:500px;height:380px;"></div>
+</div>
+
+
+
+
+
+<!-- -settings -->	
+<div data-dojo-type="dojox.mobile.ScrollableView" id="setting">
+ <div data-dojo-type="dojox.mobile.Heading"
+			data-dojo-props= "label:'Personal Settings', back: 'back ', moveTo: 'view0' "></div> 
+			
+			<ul data-dojo-type="dojox.mobile.RoundRect">
+		<li data-dojo-type="dojox.mobile.ListItem" data-dojo-props="moveTo: 'Password',transition:'flip'">Change Password</li>
+	    <li data-dojo-type="dojox.mobile.ListItem" data-dojo-props="moveTo:'Mobile' ,transition:'flip'">Change Mobile number</li>
+		<li data-dojo-type="dojox.mobile.ListItem" data-dojo-props="moveTo:  'Email' ,transition:'flip'">Change Email</li>
+	        
+	      </ul	>
+		</div> 
+<div data-dojo-type="dojox.mobile.ScrollableView" id="Password">
+ <div data-dojo-type="dojox.mobile.Heading"
+			data-dojo-props= "label:'Change password', back: 'back ', moveTo: 'setting' "></div> 
+		<a href="./index.html" target="_blank" STYLE="position: fixed; left: 150px"><button>logout...</button></a>
+		Enter Acc_no<input type="text" id="Acc_No"><br>
+		Enter old password<input type="password" id="pwd"><br>
+		Enter New password<input type="password"  id="pwd1"><br>
+		Re-Enter New password<input type="password" id="pwd2"><br><br>
+		<input type="reset" value ="reset" fixed="bottom" style= "background-color:#DDDDDD; border:0.2em solid black; color:black; position:absolute;">
+		<input type="submit" value="submit" onclick="ChangePassword()" style="background-color:#DDDDDD; border:0.2em solid black; color:black; position:absolute; left:270px; cursor:pointer; ">
+		</div>	 
+		
+		
+		<div data-dojo-type="dojox.mobile.ScrollableView" id="Mobile">
+ <div data-dojo-type="dojox.mobile.Heading"
+			data-dojo-props= "label:'Change Mobile Number', back: 'back ', moveTo: 'setting' "></div>
+			<a href="./index.html" target="_blank" STYLE="position: fixed; left: 150px"><button>logout...</button></a> 
+		Enter Acc_no<input type="text" id="Acc_No"><br>
+		Enter old Mobile number<input id="Mobile_Number"><br><br>
+		Enter New mobile number<input id="Mobile_Number1"><br><br>
+		Re-Enter New  Mobile number<input id="Mobile_Number2"><br>
+		<input type="reset" value ="reset" fixed="bottom" style= "background-color:#DDDDDD; border:0.2em solid black; color:black; position:absolute;">
+		<input type="submit" value="submit" onclick="Changemb()" style="background-color:#DDDDDD; border:0.2em solid black; color:black; position:absolute; left:270px; cursor:pointer; ">
+	
+			</div>	 
+	  
+	 <div data-dojo-type="dojox.mobile.ScrollableView" id="Email">
+ <div data-dojo-type="dojox.mobile.Heading"
+			data-dojo-props= "label:'Change Email', back: 'back ', moveTo: 'setting' "></div> 
+			<a href="./index.html" target="_blank" STYLE="position: fixed; left: 150px"><button>logout...</button></a>
+		Enter Acc_no<input type="text" id="Acc_No"><br>
+		Enter old Email<input  type="email" id="Email"><br>
+		Enter New Email<input type="email" id="Email1"><br><br>
+		
+		<input type="reset" value ="reset" fixed="bottom" style= "background-color:#DDDDDD; border:0.2em solid black; color:black; position:absolute;">
+		<input type="submit" value="submit" onclick="ChangeEmail()" style="background-color:#DDDDDD; border:0.2em solid black; color:black; position:absolute; left:270px; cursor:pointer; ">
+	
+			</div>	  
+	  
+	  
+	  
+	<script src="js/initOptions.js"></script>
+    		<script src="js/main.js"></script>
+    		<script src="js/messages.js"></script>
+
+</body>
+</html>
